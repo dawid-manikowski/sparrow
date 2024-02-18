@@ -75,7 +75,7 @@ func main() {
 	logger.Printf("Checking website response: %s", website)
 	resp, err := http.Get(website)
 	if err != nil {
-		mailSettings.message = fmt.Sprintf("BŁĄD KRYTYCZNY PODCZAS SPRAWDZANIA STATUSU STRONY: %s", err)
+		mailSettings.message = fmt.Sprintf("CIRITAL ERROR DURING STATUS CHECK: %s", err)
 	} else {
 		mailSettings.message = strconv.Itoa(resp.StatusCode)
 		if resp.StatusCode == expected_status_code {
